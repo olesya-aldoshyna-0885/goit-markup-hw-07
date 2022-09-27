@@ -12,7 +12,7 @@
     background-size: cover;
 }
 
-.hero-title {
+.hero__title {
     max-width: 696px;
     margin: 0 auto;
     margin-bottom: 30px;
@@ -24,6 +24,13 @@
     color: var(--last-color);
 }
 
+.hero__btn {
+    @extend %button;
+    min-width: 216px;
+    border-radius: 4px;
+}
+
+/*модальное окно*/
 .backdrop {
     position: fixed;
     top: 0;
@@ -32,12 +39,12 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     transition: opacity var(--changes), visibility var(--changes);
-}
 
-.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
+    &--is-hidden {
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+    }
 }
 
 .modal {
@@ -54,12 +61,12 @@
     transition: transform var(--changes);
 }
 
-.backdrop.is-hidden .modal {
+.backdrop--is-hidden .modal {
     transform: translate(-50%, -50%) scale(0);
     transition: transform var(--changes);
 }
 
-.modal-btn {
+.modal__btn {
     position: absolute;
     display: flex;
     top: 8px;
@@ -74,9 +81,9 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform var(--changes), fill var(--changes);
-}
 
-.modal-btn:hover,
-.modal-btn:focus {
-    fill: var(--accent-color);
+    &:hover,
+    &:focus {
+        fill: var(--accent-color);
+}
 }

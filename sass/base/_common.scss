@@ -3,6 +3,6 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--main-ff);
     color: var(--text-color);
 }
